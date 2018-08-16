@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Animarium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollTop.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="users/usersRequetes.js"></script>
+	<script src="users/userControleurVue.js"></script>
+	<script src="js/global.js"></script>
+</head>
+
+<body onload="currentUser()">
+    <div class='thetop'></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/Logo/animarium_logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse flex-md-column" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto small">
+                    <li class="nav-item" id="zero_login">
+                    </li>
+                    <li class="nav-item" id="first_login">
+                        <a class="nav-link text-uppercase" href="html/register.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn text-uppercase"  onclick="location.href='html/register.html';">Réserver</button>
+                    </li>
+                </ul>
+                <hr class="hr-top">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active trn" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown trn">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="html/chambres.html" role="button" aria-haspopup="true" aria-expanded="false">Chambres</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="html/chambres.html">Chambres / Suites</a>
+                            <a class="dropdown-item" href="html/chambres.html#standard">Standard</a>
+                            <a class="dropdown-item" href="html/chambres.html#classique">Classique</a>
+                            <a class="dropdown-item" href="html/chambres.html#deluxe">Deluxe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="/html/services.html" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="html/services.html#promenade">Nos services</a>
+                            <a class="dropdown-item" href="html/services.html#promenade">Promenade</a>
+                            <a class="dropdown-item" href="html/services.html#toilettage">Toilettage</a>
+                            <a class="dropdown-item" href="html/services.html#dressage">Dressage</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/gallery.html">Galeries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/testimonial.html">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/contact.html">Nous joindre</a>
+                    </li>
+
+                    <div class="form-group">
+                        <li class="nav-item">
+                            <select class="form-control" id="sel">
+                              <option class="nav-link text-uppercase">FR</option>
+                              <option class="nav-link text-uppercase">EN</option>
+                            </select>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- image Slider -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/misc/pet-people-11.jpg">
+                <div class="carousel-caption hero-text">
+                    <h2 class="display-4">Une panoplie <br> d'activités</h2>
+                    <h3 class="">Laisser nous prendre soins de <br>vos compagnons</h3>
+                    <button type="button" class="btn btn-outline-primary btn-lg text-uppercase" onclick="location.href='html/register.html'">Réserver maintenant</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/misc/kitty.jpg">
+                <div class="carousel-caption hero-text">
+                    <h2 class="display-4">Jouer, apprendre<br>et s'amuser.</h2>
+                    <h3>Une gamme de services adaptés <br>pour vos amis.</h3>
+                    <button type="button" class="btn btn-outline btn-lg text-uppercase" onclick="location.href='html/register.html'">Réserver maintenant</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/misc/puppy.jpg">
+                <div class="carousel-caption hero-text">
+                    <h2 class="display-4">Dans le respect <br>et l’amour </h2>
+                    <h3>Nous nous ferons un devoir de <br>combler ces besoins. </h3>
+                    <button type="button" class="btn btn-outline-primary btn-lg text-uppercase" onclick="location.href='html/register.html'">Réserver maintenant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="container-fluid">
+        <div class="row jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+                <p class="lead">Une alternative sûre et amusante que de laisser votre animal seul à la maison! 7 jours par semaine, nous gardons nos invités occupé avec des activités organisées et supervisées par nos personnels.</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+                <a href="html/chambres.html"><button type="button" class="btn btn-outline-secondary btn-lg text-uppercase">Forfaits</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome section -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Un environnement familial, <br> calme et relaxant.</h1>
+            </div>
+            <hr class="my-2">
+            <div class="col-12">
+                <p class="lead">La nuit, les animaux dorment dans des suites aux grandes portes vitrées, conçues spécialement pour assurer confort et sécurité. Avec la climatisation, la diffusion d'huiles essentielles, les planchers chauffants et la musique d'ambiance, tout est mis en œuvre pour offrir le meilleur séjour à votre compagnon. Vous choisissez parmi une gamme de lits douillets, et pouvez même faire décorer la suite royale pour un look masculin ou féminin.
+                </p>
+            </div>
+        </div>
+    </div>
+    <figure>
+        <div class="fixed-wrap">
+            <div id="fixed-again">
+            </div>
+        </div>
+    </figure>
+    <!-- Two Column Section -->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-lg-6">
+                <h3>Soins personnalisés <br>pour les chats et les chiens
+                </h3>
+                <p>
+                    Notre concept est que nos chiens sont libres de jouer toute la journée avec tous les autres invités dans notre zone contrôlée et climatisée. Ils sont promenés 4-5 fois par jour dans nos magnifiques sentiers boisés.
+                </p>
+                <p>Nos chats peuvent profiter de leurs maisonnettes à 4 étages dans une zone isolée. Le bien-être d’un animal passe évidemment par des soins prodigués avec amour et douceur. Vous ne désirez que ce qu’il y a de meilleur pour votre complice du quotidien?
+                </p>
+                <p>À l'hotel Animarium, nous offrons des soins esthétiques et d’entretien (toilettage) pour les chiens et chats. Découvrez comment nous pouvons améliorer la qualité de vie et l’apparence de votre compagnon chéri… tout en vous simplifiant la vie!
+                </p>
+
+                <br>
+                <a href="#" class="btn btn-primary">Plus d'info</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/misc/cat-person2.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Nos Services -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Services spécialisées</h1>
+            </div>
+            <hr class="my-2">
+            <div class="col-12">
+                <p class="lead"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/misc/service1.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Coupe stylisées</h4>
+                        <p class="card-text">L'hôtel Animarium vous offre entre autre la garderie et la pension pour chiens et chats, la tonte et toilettage ainsi que les coupes stylisées, personnelles ou standardisées, la coupe de griffes sans rendez-vous, une boutique pour votre animal avec une grande sélection d’aliments, de produits et d’accessoires de qualité supérieure pour chiens et chats!</p>
+                        <a href="#" class="btn btn-outline-secondary" onclick="location.href='html/register.html'">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/misc/service2.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Toilettages</h4>
+                        <p class="card-text">Notre expérience en toilettage et en comportement animal, notre connaissance clinique ainsi que notre habileté d’observation nous permet de vous signaler tout changement sur la condition physique de votre animal depuis sa dernière visite (infection d’oreilles, problème de peau ou autres). Vous pourrez alors consulter votre vétérinaire immédiatement.</p>
+                        <a href="#" class="btn btn-outline-secondary" onclick="location.href='html/register.html'">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/misc/service3.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Cours d’obéissance </h4>
+                        <p class="card-text">Les cours d’obéissance sont basés sur la communication entre le maître et son chien et sur le développement d’un lien de confiance mutuel. Le maître apprend à être un bon leader qui comprend le langage canin et les besoins de son chien. le chien apprend à être attentif à vos demandes et à devenir un chien dont vous vous promener en toute confiance.</p>
+                        <a href="#" class="btn btn-outline-secondary" onclick="location.href='html/register.html'">Réserver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Background -->
+    <figure>
+        <div class="fixed-wrap">
+            <div id="fixed">
+            </div>
+        </div>
+    </figure>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="images/Logo/animarium_logo_blanc.png">
+                    <hr class="light">
+                    <p>514-414-2018</p>
+                    <p>email@animarium.ca</p>
+                    <p>1200, Doggy Street, Pettiville, Montréal</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Heures d"ouverture (Bureau)</h5>
+                    <hr class="light">
+                    <p>lundi- - vendredi: 9 am - 5 pm</p>
+                    <p>Samedi: 10 am - 4 pm:</p>
+                    <p>Dimanche: fermé</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Services</h5>
+                    <hr class="light">
+                    <p>Promenade</p>
+                    <p>Toilettage</p>
+                    <p>Dressage</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <div class='scrolltop'>
+        <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+</body>
