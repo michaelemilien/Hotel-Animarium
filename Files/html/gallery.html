@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Animarium galeries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/scrollTop.js"></script>
+    <script src="../js/smooth-scroll.js"></script>
+    <script src="../js/main.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/baguetteBox.css">
+    <link rel="stylesheet" href="../css/thumbnail-gallery.css">
+    <script src="../js/baguetteBox.js"></script>
+    <script src="../users/usersRequetes.js"></script>
+	<script src="../users/userControleurVue.js"></script>
+	<script src="../js/global.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+
+    </script>
+</head>
+
+<body onload="currentUser()">
+    <div class='thetop'></div>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo/animarium_logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse flex-md-column" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto small">
+                    <li class="nav-item" id="zero_login">
+                    </li>
+                    <li class="nav-item" id="first_login">
+                        <a class="nav-link text-uppercase" href="register.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn text-uppercase" onclick="location.href='register.html'">Réserver</button>
+                    </li>
+                </ul>
+                <hr class="hr-top">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chambres</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="chambres.html">Chambres / Suites</a>
+                            <a class="dropdown-item" href="chambres.html#standard">Standard</a>
+                            <a class="dropdown-item" href="chambres.html#suite">Classique</a>
+                            <a class="dropdown-item" href="chambres.html#deluxe">Deluxe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="services.html">Nos services</a>
+                            <a class="dropdown-item" href="services.html#promenade">Promenade</a>
+                            <a class="dropdown-item" href="services.html#toilettage">Toilettage</a>
+                            <a class="dropdown-item" href="services.html#dressage">Dressage</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">galeries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="testimonial.html">témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">nous joindre</a>
+                    </li>
+                   <div class="form-group">
+                        <li class="nav-item">
+                            <select class="form-control" id="sel">
+                              <option class="nav-link text-uppercase">FR</option>
+                              <option class="nav-link text-uppercase">EN</option>
+                            </select>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Image Section  -->
+     <div class="hero-image-gallery">
+        <div class="hero-text-gallery">
+            <h3 class="display-4">Galeries</h3>
+        </div>
+    </div>
+    <!-- Galeries photos -->
+    <div class="container">
+        <div class="container gallery-container">
+
+            <h1 class="text-center">Nos chambres et <br>nos hôtes en images</h1>
+            <p class="page-description text-center"></p>
+            <div class="tz-gallery">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room1.png">
+                    <img src="../images/chambres/room1.png" alt="Room_1" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room9.png">
+                    <img src="../images/chambres/room9.png" alt="Room_9" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room7.png">
+                    <img src="../images/chambres/room7.png" alt="Park" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room3.png">
+                    <img src="../images/chambres/room3.png" alt="Room_3" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room10.png">
+                    <img src="../images/chambres/room10.png" alt="Room_10" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room14.png">
+                    <img src="../images/chambres/room14.png" alt="Room_14" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room6.png">
+                    <img src="../images/chambres/room6.png" alt="Room_6" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room16.png">
+                    <img src="../images/chambres/room16.png" alt="Room_16" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room17.png">
+                    <img src="../images/chambres/room17.png" alt="Room_17" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room15.png">
+                    <img src="../images/chambres/room15.png" alt="Room_15" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room24.png">
+                    <img src="../images/chambres/room24.png" alt="Room_24" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room11.png">
+                    <img src="../images/chambres/room11.png" alt="Room_11" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room18.png">
+                    <img src="../images/chambres/room18.png" alt="Room_18" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room19.png">
+                    <img src="../images/chambres/room19.png" alt="Room_19" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room4.png">
+                    <img src="../images/chambres/room4.png" alt="Room_4" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room21.png">
+                    <img src="../images/chambres/room21.png" alt="Room_21" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room22.png">
+                    <img src="../images/chambres/room22.png" alt="Room_22" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../images/chambres/room23.png">
+                    <img src="../images/chambres/room23.png" alt="Room_23" class="card-img-top">
+                    </a>
+                        </div>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/baguetteBox.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+
+    </script>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="../images/Logo/animarium_logo_blanc.png">
+                    <hr class="light">
+                    <p>514-414-2018</p>
+                    <p>email@animarium.ca</p>
+                    <p>1200, Doggy Street, Pettiville, Montréal</p>
+
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Heures d"ouverture (Bureau)</h5>
+                    <hr class="light">
+                    <p>lundi- - vendredi: 9 am - 5 pm</p>
+                    <p>Samedi: 10 am - 4 pm:</p>
+                    <p>Dimanche: fermé</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Services</h5>
+                    <hr class="light">
+                    <p>Promenade</p>
+                    <p>Toilettage</p>
+                    <p>Dressage</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to top -->
+    <div class='scrolltop'>
+        <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+
+</body>
+
+</html>

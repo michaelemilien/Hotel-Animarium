@@ -1,2 +1,2 @@
 # Hotel-Animarium
-Project for a pet hotel website
+Project for a Pet Hotel website

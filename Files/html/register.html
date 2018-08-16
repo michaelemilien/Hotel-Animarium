@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<title>Form registration</title>
+<meta charset="utf-8">
+<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+	type="text/css">
+<!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">  -->
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="../css/registerUser.css" type="text/css"
+	media="all">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon.ico">
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/global.js"></script>
+<script src="../users/usersRequetes.js"></script>
+<script src="../users/userControleurVue.js"></script>
+<script src="../reservation/reservationRequetes.js"></script>
+<script src="../reservation/reservationControleurVue.js"></script>
+<script src="../js/files_multiple.js"></script>
+<script src="../js/global.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body onload="currentUser()">
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-xl navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo/animarium_logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse flex-md-column" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto small">
+                	<li class="nav-item" id="zero_login">
+                    </li>
+                    <li class="nav-item" id="first_login">
+                        <a class="nav-link text-uppercase" href="#">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn text-uppercase">Réserver</button>
+                    </li>
+                </ul>
+                <hr class="hr-top">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active trn" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown trn">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="chambres.html" role="button" aria-haspopup="true" aria-expanded="false">Chambres</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="chambres.html">Chambres / Suites</a>
+                            <a class="dropdown-item" href="chambres.html#standard">Standard</a>
+                            <a class="dropdown-item" href="chambres.html#classique">Classique</a>
+                            <a class="dropdown-item" href="chambres.html#deluxe">Deluxe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="services.html" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="services.html#promenade">Nos services</a>
+                            <a class="dropdown-item" href="services.html#promenade">Promenade</a>
+                            <a class="dropdown-item" href="services.html#toilettage">Toilettage</a>
+                            <a class="dropdown-item" href="services.html#dressage">Dressage</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Galeries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Nous joindre</a>
+                    </li>
+
+                    <div class="form-group">
+                        <li class="nav-item">
+                            <select class="form-control" id="sel">
+                              <option class="nav-link text-uppercase">FR</option>
+                              <option class="nav-link text-uppercase">EN</option>
+                            </select>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<!-- Panel de User Connecter  -->
+	<div id="panelDeUser"></div>
+	<!--  -->
+
+	<div class="container pb-3" id="divSignupLogin"
+		style="width: 500px; color: #002a34; display: block;">
+
+		<h4 class="pb-2 pt-3 text-center text-white">Connexion et Registration</h4>
+
+		<div class="card" style="">
+
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item"><a class="nav-link active"
+					style="width: 234px; color: #002a34" id="home-tab"
+					data-toggle="tab" href="#divRegistration" role="tab"
+					aria-controls="home" aria-selected="true">Devenir membre</a></li>
+				<li class="nav-item"><a class="nav-link"
+					style="width: 234px; color: #002a34" id="profile-tab"
+					data-toggle="tab" href="#divLogin" role="tab"
+					aria-controls="profile" aria-selected="false">Se connecter</a></li>
+			</ul>
+
+			<div class="tab-content" id="myTabContent"
+				style="background-color: #b3d9ff">
+
+
+				<div class="tab-pane fade show active" id="divRegistration"
+					role="tabpanel" aria-labelledby="home-tab">
+
+					<div class="form-group"></div>
+					<div class="mx-sm-3 mb-2">
+						<form action="javascript: userRegistration()" method="post"
+							id="formRegistration" name="formRegistration"
+							onsubmit="return validateFormNewUser()">
+							<div class="form-group ">
+								<input type="text" name="username" id="username"
+									class="form-control" placeholder="Nom d'utilisateur">
+							</div>
+							<div class="form-group">
+								<input type="password" Name="password1" id="password1"
+									class="form-control" placeholder="Mot de passe">
+							</div>
+							<div class="form-group ">
+								<input type="password" Name="password2" id="password2"
+									class="form-control" class="lessgap"
+									placeholder="Confirmer mot de passe">
+							</div>
+							<div class="form-group ">
+								<input type="text" Name="nom" id="nom" placeholder="Nom"
+									class="form-control">
+							</div>
+							<div class="form-group ">
+								<input type="text" Name="prenom" id="prenom"
+									class="form-control" placeholder="Prénom">
+							</div>
+							<div class="form-group ">
+								<input type="text" Name="email" id="email" class="form-control"
+									placeholder="Courriel">
+							</div>
+							<div class="form-group ">
+								<input type="text" Name="phone" id="phone" class="form-control"
+									placeholder="Téléphone (000)000-0000">
+							</div>
+							<div class="form-group ">
+								<input type="text" Name="code_postal" id="code_postal"
+									class="form-control" placeholder="Code Postal (H1H 1H1)">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary mb-2"
+									style="background-color: #002a34; border-color: #002a34">Enregistrer</button>
+							</div>
+						</form>
+					</div>
+					<div class="panel-footer"></div>
+				</div>
+
+				<div class="tab-pane fade" id="divLogin" role="tabpanel"
+					aria-labelledby="profile-tab">
+					<div class="mx-sm-3 mb-2">
+						<div class="form-group "></div>
+						<form action="javascript: userLogin()" method="post"
+							id="formLogin" name="formLogin"
+							onSubmit="return validateFormLogin()">
+							<div class="form-group ">
+								<input type="text" name="usernameL" id="usernameL"
+									class="form-control" placeholder="Nom d'utilisateur">
+							</div>
+							<div class="form-group">
+								<input type="password" Name="passwordL" id="passwordL"
+									class="form-control" placeholder="Mot de passe">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary mb-2"
+									style="background-color: #002a34; border-color: #002a34">Connecter</button>
+							</div>
+						</form>
+					</div>
+					<div class="panel-footer"></div>
+				</div>
+			</div>
+			<!-- fermeture du tabContent -->
+		</div>
+		<!-- fermeture du div class card-->
+	</div>
+	<!-- fermeture du div containeur -->
+
+
+
+
+
+	<!-- Debut Block du client -->
+
+	<div id="divClient" style="display: none; margin-top: 3em;">
+		<h1 style="color: white; text-align: center">Espace client</h1>
+
+		<div class="container"
+			style="margin: 50px auto; width: 1000px; padding: 10px; border: 2px solid #002a34;  background-color:white;">
+			<div class="row">
+				<!-- Menu espace client -->
+				<div class="col-3">
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active"
+							id="list-home-list" data-toggle="list"
+							href="#divfaireReservation" role="tab" aria-controls="home">Faire
+							réservation</a> <a class="list-group-item list-group-item-action"
+							id="list-profile-list" data-toggle="list"
+							href="#listerReservation" role="tab" aria-controls="profile"
+							onClick="listerReservation()">Consulter réservation</a> <a
+							class="list-group-item list-group-item-action"
+							id="list-messages-list" data-toggle="list" href="#laisserOpinion"
+							role="tab" aria-controls="messages" onClick="donnerOpinion()">Laisser
+							opinion</a> <a class="list-group-item list-group-item-action"
+							id="list-settings-list" data-toggle="list" href="#modifierProfil"
+							role="tab" aria-controls="settings" onClick="afficheProfil()">Mon
+							profil</a>
+					</div>
+				</div>
+				<!-- FIN Menu espace client   onclick="siannulationpossible('2018-05-09')"-->
+
+				<div class="col-8">
+					<div class="tab-content" id="nav-tabContent">
+
+						<!-- Contenu pour Faire reservation DEBUT -->
+						<div class="tab-pane fade show active" id="divfaireReservation"
+							role="tabpanel" aria-labelledby="list-home-list">
+							<div class="tab-content">
+								<h2>Faire réservation</h2>
+								<FORM id="formReservation"
+									action="javascript: faireReservation()" method="post"
+									onsubmit="validerFormReservation();">
+									<div class="form-group">
+										<label for="date_debut" class="col-sm-2 col-form-label">Date
+											debut</label> <input type="date" id="date_debut" name="date_debut"
+											class="form-control" onchange="fullReservation()" required>
+									</div>
+									<div class="form-group">
+										<label for="date_fin" class="col-sm-2 col-form-label">Date
+											Fin</label> <input type="date" id="date_fin" name="date_fin"
+											class="form-control" onchange="fullReservation()" required>
+
+									</div>
+
+									<div class="form-group">
+										<label for="type_animal" class="col-sm-2 col-form-label">Animal</label>
+										<select class="form-control" id="type_animal"
+											name="type_animal" onchange="fullReservation()" required>
+											<option value="">Choisir</option>
+											<option value="1">Chien</option>
+											<option value="2">Chat</option>
+										</select>
+									</div>
+									<div id="reservparam" style="display: none">
+										<div class="form-group pb-2">
+											<label for="type_chambre" class="col-sm-2 col-form-label">Chambre</label>
+											<select class="form-control" id="type_chambre"
+												name="type_chambre" required onchange="prixChambre();">
+											</select>
+										</div>
+										<div id="reserv_service_list"></div>
+
+
+										<div class="form-group">
+											<label for="demandepersonelle"
+												class="col-sm-2 col-form-label">Demande personelle</label>
+											<textarea id="exigences" name="exigences" rows="4"
+												placeholder="Demande speciale" class="form-control"></textarea>
+										</div>
+										<div class="col-12" id="calculation_de_prix"></div>
+										<input type="hidden" id="prix_de_reservation"
+											name="prix_reservation"> <input type="hidden"
+											id="prix_de_services" name="prix_services">
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary mb-2"
+												style="background-color: #002a34; border-color: #002a34">Reserver</button>
+										</div>
+									</div>
+								</FORM>
+							</div>
+							<div class="panel-footer bg-white border border-0"
+								id="panel-footer"></div>
+						</div>
+						<!-- Contenu pour Faire reservation FIN -->
+
+						<!-- Contenu pour Mes reservation DEBUT -->
+						<div class="tab-pane fade" id="listerReservation" role="tabpanel"
+							aria-labelledby="list-profile-list">
+							<div class="tab-content">
+								<h2>Mes réservations</h2>
+							</div>
+							<div id="Reservation_user"></div>
+						</div>
+						<!-- Contenu pour Mes reservation FIN -->
+
+						<!-- Contenu pour Laisser Opinion DEBUT -->
+						<div class="tab-pane fade" id="laisserOpinion" role="tabpanel"
+							aria-labelledby="list-messages-list">
+							<div class="tab-content">
+								<h3>Merci de partager votre expérience avec l'hôtel.</h3>
+								<h4>Décrivez en quelques mots.</h4>
+								<form id="formDonnerOpinion" name="formDonnerOpinion"
+									action="javascript: ecrireopinion()" method="post">
+									<div class="form-group">
+										<label for="reservation" class="col-sm-4 col-form-label">Résérvation</label>
+										<select id="reservation" name="idr" class="form-control">
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label for="descr_temoign" class="col-sm-4 col-form-label">Texte</label>
+										<textarea id="descr_temoign" name="descr_temoign"
+											class="form-control" rows="5"></textarea>
+
+									</div>
+
+									<div class="form-group">
+										<label for="rating" class="col-sm-4 col-form-label">Rating</label>
+										<select id="rateit" name="rateit" class="form-control"
+											style="color: orange">
+											<option value="5">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</option>
+											<option value="4">&#x2605;&#x2605;&#x2605;&#x2605;</option>
+											<option value="3">&#x2605;&#x2605;&#x2605;</option>
+											<option value="2">&#x2605;&#x2605;</option>
+											<option value="1">&#x2605;</option>
+										</select>
+									</div>
+
+
+									<br>
+									<div class="form-group">
+										<label for="imagesNewOpinion"
+											class="col-sm-4 col-form-label">Images</label>
+
+											<input type="file"
+												data-multiple-caption="{count} files selected"
+												name="images[]" id="imagesNewOpinion" class="form-control"
+												multiple accept='image/*'>
+
+									</div>
+									<div class="container">
+										<div class="row justify-content-start"
+											id="selectedFilesNewOpinion"></div>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary btn-lg mb-2"
+											style="background-color: #002a34; border-color: #002a34">Envoyer</button>
+									</div>
+								</form>
+							</div>
+							<div class="panel-footer" id="panel-footer"></div>
+						</div>
+						<!-- Contenu pour Laisser Opinion FIN -->
+
+						<!-- Contenu pour MODIFIER PROFIL DEBUT -->
+						<div class="tab-pane fade" id="modifierProfil" role="tabpanel"
+							aria-labelledby="list-settings-list">
+							<div class="tab-content">
+								<h2>Mettre à jour votre profil</h2>
+								<form id="formModifier" name="formModifier"
+									action="javascript: modifierProfil()" method="post">
+									<div class="form-group row">
+										<label for="nomU" class="col-sm-3 col-form-label">Nom</label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="nomU" name="nomU">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="prenomU" class="col-sm-3 col-form-label">Prénom</label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="prenomU"
+												name="prenomU">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="emailU" class="col-sm-3 col-form-label">Courriel</label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="emailU"
+												name="emailU">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="phoneU" class="col-sm-3 col-form-label">Téléphone</label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="phoneU"
+												name="phoneU">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="code_postalU" class="col-sm-3 col-form-label">Code
+											Postal</label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="code_postalU"
+												name="code_postalU">
+										</div>
+									</div>
+									<div class="form-group">
+										<div id="prix_total"></div>
+										<button type="submit" class="btn btn-primary mb-2"
+											style="background-color: #002a34; border-color: #002a34">Modiffier</button>
+
+									</div>
+									<div id="updateUserFooter"></div>
+								</form>
+							</div>
+							<div class="panel-footer" id="panel-footer"></div>
+						</div>
+						<!-- Contenu pour MODIFIER PROFIL FIN -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Fin Block du client -->
+
+
+	<!-- Footer -->
+
+	<footer>
+		<div class="container-fluid padding">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<img src="../images/Logo/animarium_logo_blanc.png">
+					<hr class="light">
+					<p>514-414-2018</p>
+					<p>email@animarium.ca</p>
+					<p>1200, Doggy Street, Pettiville, Montréal</p>
+
+
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Heures d"ouverture (Bureau)</h5>
+					<hr class="light">
+					<p>lundi- - vendredi: 9am - 5pm</p>
+					<p>Samedi: 10am - 4pm:</p>
+					<p>Dimanche: fermé</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Services</h5>
+					<hr class="light">
+					<p>Promenade</p>
+					<p>Toilettage</p>
+					<p>Dressage</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Button trigger modal when we click ANNULER -->
+
+	<!-- Modal annuler reservation-->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLongTitle">Attention</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Voulez vous vraiment annuler votre
+					résérvation?</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Non</button>
+					<button type="button" class="btn btn-primary"
+						id="ModalAnnulerReservation" data-dismiss="modal">Oui</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Merci pour reservation -->
+	<div class="modal fade" id="modal_reservation" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Merci!</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

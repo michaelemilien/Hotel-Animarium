@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Animarium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/scrollTop.js"></script>
+    <script src="../js/smooth-scroll.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../users/usersRequetes.js"></script>
+	<script src="../users/userControleurVue.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+
+<!-- Test des commentait=res-->
+
+<body onload="currentUser()">
+    <div class='thetop'></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo/animarium_logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse flex-md-column" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto small">
+                    <li class="nav-item" id="zero_login">
+                    </li>
+                    <li class="nav-item" id="first_login">
+                        <a class="nav-link text-uppercase" href="register.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn text-uppercase" onclick="location.href='register.html'">Réserver</button>
+                    </li>
+                </ul>
+                <hr class="hr-top">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chambres</a>
+                       <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="chambres.html">Chambres / Suites</a>
+                            <a class="dropdown-item" href="chambres.html#standard">Standard</a>
+                            <a class="dropdown-item" href="chambres.html#classique">Classique</a>
+                            <a class="dropdown-item" href="chambres.html#deluxe">Deluxe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="#promenade">Promenade</a>
+                            <a class="dropdown-item" href="#toilettage">Toilettage</a>
+                            <a class="dropdown-item" href="#dressage">Dressage</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Galeries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Nous joindre</a>
+                    </li>
+                    <div class="form-group">
+                        <li class="nav-item">
+                            <select class="form-control" id="sel">
+                              <option class="nav-link text-uppercase">FR</option>
+                              <option class="nav-link text-uppercase">EN</option>
+                            </select>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--  hero image  -->
+
+    <div class="hero-image-services">
+        <div class="hero-text-services">
+            <h3 class="display-4">Aux petits soins pour <br>vos petits amours.</h3>
+            <p class="lead">Il est impératif que nous continuons à <br>exprimer l'importance du toilettage réguliers.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">Dorlotés à souhait vos precieux compagnons.</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">Notre philosophie est simple, respecter l’animal ainsi qu’être à l’écoute des maîtres pour s’assurer le meilleur pour celui-ci. Nous travaillons toujours en prônant le renforcement positif.
+                </p>
+            </div>
+        </div>
+        </div>
+<!--    </div>-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/services/service-promenade.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Promenade</h4>
+                        <p class="card-text">Lors de l’exercice physique, le corps du chien sécrète des endorphines qui sont un anti-stress naturel. Vous verrez très certainement une différence majeure dans le comportement de votre animal en lui offrant des promenades quotidiennes. </p>
+
+                        <p></p>
+                        <!--<a href="#" class="btn btn-outline-secondary">Réserver</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/services/service-spa.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Toilettage</h4>
+                        <p class="card-text">Veillez à l’hygiène et au bien-être de votre chat et de cotre chien en nous confiant son toilettage. Votre petit bout de poils sera assurément entre de bonnes mains. Nous ferons preuve d’un grand soin durant toutes les étapes du toilettage. </p>
+                       <!-- <a href="#" class="btn btn-outline-secondary">Réserver</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/services/service-dressage.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Dressage</h4>
+                        <p class="card-text">Les cours d’éducation canine sont donnés par une spécialiste en comportement animale et maître-chien. La méthode d’éducation est portée sur deux axes : le renforcement positif et la méthode douce qui, ensemble, amènent l’animal à travailler de façon volontaire.</p>
+                       <!-- <a href="#" class="btn btn-outline-secondary">Réserver</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="promenade" class="bg-image-4">
+        <div class="bg-image-text-1 display-4">PROMENADE</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">Pour un chien moins stressé et plus heureux!</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">Les chiens ont besoin de promenades quotidiennes. Cela permet de maintenir leur santé physique et psychologique et ce, peu importe la race ou la taille. C'est le secret des chiens heureux! Ce sont des êtres qui aiment socialiser avec leurs congénères. Les interactions sociales contribuent à les stimuler mentalement et leur faire dépenser d'avantage d'énergie qu'en marchant seul.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="toilettage" class="bg-image-5">
+        <div class="bg-image-text-1 display-4">TOILETTAGE</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1"> Notre mission: le bien-être des animaux. </h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">L’idéal est de commencer le toilettage quand le chiot à 4 mois, car plus vite il est initié au toilletage plus vite il va l’apprécier. Il est primordial de faire toiletter votre animal d’une facon régulière pour éviter les nœuds, prévenir les infections, vérifier la présence de puces ou tiques et l’identification de tous changements physiques sur l’animal.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="dressage" class="bg-image-6">
+        <div class="bg-image-text-1 display-4">DRESSAGE</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">deluxe, de l'espace, de l'elégance</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">L’idéal est de commencer le toilettage quand le chiot à 4 mois, car plus vite il est initié au toilletage plus vite il va l’apprécier. Il est primordial de faire toiletter votre animal d’une facon régulière pour éviter les nœuds, prévenir les infections, vérifier la présence de puces ou tiques et l’identification de tous changements physiques sur l’animal.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="../images/Logo/animarium_logo_blanc.png">
+                    <hr class="light">
+                    <p>514-414-2018</p>
+                    <p>email@animarium.ca</p>
+                    <p>1200, Doggy Street, Pettiville, Montréal</p>
+
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Heures d"ouverture (Bureau)</h5>
+                    <hr class="light">
+                    <p>lundi- - vendredi: 9 am - 5 pm</p>
+                    <p>Samedi: 10 am - 4 pm:</p>
+                    <p>Dimanche: fermé</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Services</h5>
+                    <hr class="light">
+                    <p>Promenade</p>
+                    <p>Toilettage</p>
+                    <p>Dressage</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <div class='scrolltop'>
+        <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+
+</body>

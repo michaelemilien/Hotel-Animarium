@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Animarium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/scrollTop.js"></script>
+    <script src="../js/smooth-scroll.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../users/usersRequetes.js"></script>
+	<script src="../users/userControleurVue.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<!-- Test des commentait=res-->
+<body onload="currentUser()">
+    <div class='thetop'></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo/animarium_logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse flex-md-column" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto small">
+                    <li class="nav-item" id="zero_login">
+                    </li>
+                    <li class="nav-item" id="first_login">
+                        <a class="nav-link text-uppercase" href="register.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn text-uppercase" onclick="location.href='register.html'">Réserver</button>
+                    </li>
+                </ul>
+                <hr class="hr-top">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chambres</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="chambres.html#standard">Standard</a>
+                            <a class="dropdown-item" href="chambres.html#suite">Classique</a>
+                            <a class="dropdown-item" href="chambres.html#deluxe">Suite deluxe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="services.html" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="Preview">
+                            <a class="dropdown-item" href="services.html">Nos services</a>
+                            <a class="dropdown-item" href="services.html#promenade">Promenade</a>
+                            <a class="dropdown-item" href="services.html#toilettage">Toilettage</a>
+                            <a class="dropdown-item" href="services.html#dressage">Dressage</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Galeries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Nous joindre</a>
+                    </li>
+                    <div class="form-group">
+                        <li class="nav-item">
+                            <select class="form-control" id="sel">
+                              <option class="nav-link text-uppercase">FR</option>
+                              <option class="nav-link text-uppercase">EN</option>
+                            </select>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero image  -->
+
+    <div class="hero-image">
+        <div class="hero-text-1">
+            <h3 class="display-4">Élégance et modernité</h3>
+            <p class="lead">Nos chambres offrent le bonheur d’un petit cocon de confort et d’intimité.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">Raffinement, prestations et charme. </h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">Chaque chambre est bien plus qu’une simple chambre : c’est un espace spécifiquement créé pour la détente et le plaisir. Un équilibre parfait entre l’ancien et le moderne. Un refuge où la beauté et le caractère de Montréal côtoient les éléments de confort les plus modernes.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/chambres/standard-md.png">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Chambres Standard</h4>
+                        <p class="card-text">Cette chambre est dans un atrium qui est nettoyé et assaini quotidiennement et meublé avec de la literie hypoallergénique.</p>
+                        <p>À partir de <span class="h5 prix">$20/jour</span></p>
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#forfaitStandard" aria-expanded="false" aria-controls="#forfaitStandard">
+                        Voir les forfaits
+                        </button><br><br>
+                        <table class="table collapse" id="forfaitStandard">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Durée</th>
+                                    <th>Prix</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Jour</td>
+                                    <td>$20</td>
+                                </tr>
+                                <tr>
+                                    <td>Semaine (7jours)</td>
+                                    <td>$120</td>
+                                </tr>
+                                <tr>
+                                    <td>Mois(30 jours)</td>
+                                    <td>$500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/chambres/suite-md.png">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Chambres Classique</h4>
+                        <p class="card-text">De grandes suites sont séparées des chambres standard pour un environnement plus paisible, privé. </p>
+                        <p>À partir de <span class="h5 prix">$35/jour</span></p>
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#forfaitClassique" aria-expanded="false" aria-controls="#forfaitClassique">
+                        Voir les forfaits
+                        </button><br><br>
+                        <table class="table collapse" id="forfaitClassique">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Durée</th>
+                                    <th>Prix</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Jour</td>
+                                    <td>$35</td>
+                                </tr>
+                                <tr>
+                                    <td>Semaine (7jours)</td>
+                                    <td>$220</td>
+                                </tr>
+                                <tr>
+                                    <td>Mois(30 jours)</td>
+                                    <td>$900</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/chambres/deluxe-md.png">
+                    <div class="card-body">
+                        <h4 class="card-title-room">Chambres Deluxe </h4>
+                        <p class="card-text">Les suites Deluxe sont parfaites pour des animaux de compagnie multiples. Les chambres disposent d'un lit et une TV.</p>
+
+                        <p>À partir de <span class="h5 prix">$60/jour</span></p>
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#forfaitDeluxe" aria-expanded="false" aria-controls="#forfaitDeluxe">
+                        Voir les forfaits
+                        </button><br><br>
+                        <table class="table collapse" id="forfaitDeluxe">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Durée</th>
+                                    <th>Prix</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Jour</td>
+                                    <td>$60</td>
+                                </tr>
+                                <tr>
+                                    <td>Semaine (7jours)</td>
+                                    <td>$390</td>
+                                </tr>
+                                <tr>
+                                    <td>Mois(30 jours)</td>
+                                    <td>$1600</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="standard" class="bg-image-1">
+        <div class="bg-image-text-1 display-4">CHAMBRES STANDARD</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">standard, confortable et spacieuse</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">Nos chambres standard sont toujours plus luxueuses que les chambres des autres hôtel. Confortable et spacieuse c'est parfaite pour eux tandis qu'ils dorment ou se préparent à aller au lit.
+                </p><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nous offrons des forfaits adapté à la durée des séjours:</th>
+                            <th>Prix</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Jour</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Semaine (7jours)</td>
+                            <td>$120</td>
+                        </tr>
+                        <tr>
+                            <td>Mois(30 jours)</td>
+                            <td>$500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="suite" class="bg-image-2">
+        <div class="bg-image-text-1 display-4">CHAMBRES CLASSIQUE</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">pleine de vie et de charme</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">Tout est une question de liberté..Avec une superficie de 100 à 150 p2, vivez pleinement la liberté dans un grand espace, de bouger et de respirer dans une suite pleine de vie et de charme.
+
+                </p>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nous offrons des forfaits adapté à la durée des séjours:</th>
+                            <th>Prix</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Jour</td>
+                            <td>$35</td>
+                        </tr>
+                        <tr>
+                            <td>Semaine (7jours)</td>
+                            <td>$220</td>
+                        </tr>
+                        <tr>
+                            <td>Mois(30 jours)</td>
+                            <td>$900</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section  -->
+    <section id="deluxe" class="bg-image-3">
+        <div class="bg-image-text-1 display-4">CHAMBRES DELUXE</div>
+    </section>
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="h1">deluxe, de l'espace, de l'elégance</h1>
+            </div>
+            <hr class="sy-2">
+            <div class="col-12">
+                <p class="lead">La lumière, la pierre apparente, le cuir souple, les finis modernes… tout dans le décor contribue à rendre l’espace convivial. Ici et là, des coussins moelleux vous invitent à vous prélasser.
+
+                </p>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nous offrons des forfaits adapté à la durée des séjours:</th>
+                            <th>Prix</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Jour</td>
+                            <td>$60</td>
+                        </tr>
+                        <tr>
+                            <td>Semaine (7jours)</td>
+                            <td>$390</td>
+                        </tr>
+                        <tr>
+                            <td>Mois(30 jours)</td>
+                            <td>$16. 00
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="../images/Logo/animarium_logo_blanc.png">
+                    <hr class="light">
+                    <p>514-414-2018</p>
+                    <p>email@animarium.ca</p>
+                    <p>1200, Doggy Street, Pettiville, Montréal</p>
+
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Heures d"ouverture (Bureau)</h5>
+                    <hr class="light">
+                    <p>lundi- - vendredi: 9 am - 5 pm</p>
+                    <p>Samedi: 10 am - 4 pm:</p>
+                    <p>Dimanche: fermé</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Services</h5>
+                    <hr class="light">
+                    <p>Promenade</p>
+                    <p>Toilettage</p>
+                    <p>Dressage</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scroll to top -->
+    <div class='scrolltop'>
+        <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+
+</body>
